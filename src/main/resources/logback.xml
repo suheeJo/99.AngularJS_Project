@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration>
+
+	<appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>[%d] %-5p [%c] %m%n</pattern>
+		</encoder>
+	</appender>
+	
+	<appender name="console_user_access" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>[%d] %-5p %m%n</pattern>
+		</encoder>
+	</appender>
+	
+	<root level="info">
+		<appender-ref ref="console" />
+	</root>
+	
+	<logger name="com.angularjs.suhee" additivity="false" level="debug">
+		<appender-ref ref="console" />
+	</logger>
+	
+</configuration>
