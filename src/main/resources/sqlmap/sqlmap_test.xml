@@ -1,1 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="HOME">
+
+	<typeAlias alias="homeModel" type="com.angularjs.suhee.model.HomeModel"/>
+
+	<select id="getData" resultClass="homeModel">
+		SELECT
+			name
+			,  title
+		FROM
+			angular_test_data
+	</select>
+	
+	<insert id="insertData" parameterClass="homeModel">
+		INSERT INTO angular_test_data(
+			name
+			, title
+		) VALUES(
+			#name#
+			, #title#
+		)
+	</insert>
+
+</sqlMap>

@@ -5,10 +5,13 @@ import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.angularjs.suhee.service.HomeService;
 
 /**
  * Handles requests for the application home page.
@@ -18,19 +21,22 @@ public class HomeController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
+	@Autowired
+	private HomeService homeService;
+	
 	/**
 	 * <pre>
-	 * ºä ÆäÀÌÁö¸¦ ¹İÈ¯ÇÑ´Ù.
+	 * í˜ì´ì§€ë¥¼ ë°˜í™˜í•œë‹¤.
 	 *  
 	 * history
-	 * 2014. 7. 15. by Á¶¼öÈñ
-	 * ÃÊ±â °³¹ß
+	 * 2014. 7. 18. by ì¡°ìˆ˜í¬
+	 * ì´ˆê¸° ê°œë°œ
 	 * </pre>
 	 *
-	 * @since 2014. 7. 15.¿ÀÈÄ 3:24:06
+	 * @since 2014. 7. 18.ì˜¤ì „ 10:58:49
 	 * @return
 	 */
-	@RequestMapping(value = "/", method = RequestMethod.GET)
+	@RequestMapping(value = "/home", method = RequestMethod.GET)
 	public String getHomeView() {
 		logger.debug("======================================================");
 		logger.debug("==================== getHomeView =====================");
@@ -41,18 +47,18 @@ public class HomeController {
 	
 	/**
 	 * <pre>
-	 * ºä ÆäÀÌÁö¿¡ ÇÊ¿äÇÑ µ¥ÀÌÅÍ¸¦ JSONÇü½ÄÀ¸·Î ¹İÈ¯ÇÑ´Ù.
+	 * Json êµ¬ì¡°ë¡œ ë°˜í™˜í•œë‹¤.
 	 *  
 	 * history
-	 * 2014. 7. 15. by Á¶¼öÈñ
-	 * ÃÊ±â °³¹ß
+	 * 2014. 7. 18. by ì¡°ìˆ˜í¬
+	 * ì´ˆê¸° ê°œë°œ
 	 * </pre>
 	 *
-	 * @since 2014. 7. 15.¿ÀÈÄ 3:24:14
+	 * @since 2014. 7. 18.ì˜¤ì „ 10:58:40
 	 * @return
 	 */
 	@RequestMapping(value = "/getDate", method = RequestMethod.POST)
-	public @ResponseBody Map<String, Object> ajaxGetDate() {
+	public @ResponseBody Map<String, Object> ajaxGetDate() throws Exception{
 		logger.debug("======================================================");
 		logger.debug("===================== ajaxGetDate ====================");
 		logger.debug("======================================================");
@@ -61,7 +67,36 @@ public class HomeController {
 		retMap.put("name", "suhee");
 		retMap.put("age", 21);
 		
+		// iBatis ì—°ë™
+		homeService.connIbatis();
+		
 		return retMap;
+	}
+	
+	
+	/**
+	 * <pre>
+	 * transaction í…ŒìŠ¤íŠ¸ì´ë‹¤.
+	 *  
+	 * history
+	 * 2014. 7. 18. by ì¡°ìˆ˜í¬
+	 * ì´ˆê¸° ê°œë°œ
+	 * </pre>
+	 *
+	 * @since 2014. 7. 18.ì˜¤í›„ 2:24:00
+	 * @return
+	 * @throws Exception
+	 */
+	@RequestMapping(value = "/doTransactionTest", method = RequestMethod.GET)
+	public @ResponseBody Map<String, Object> doTransactionTest() throws Exception{
+		logger.debug("======================================================");
+		logger.debug("================== doTransactionTest =================");
+		logger.debug("======================================================");
+		
+		// iBatis ì—°ë™
+		homeService.doTransactionTest();
+		
+		return null;
 	}
 	
 }
