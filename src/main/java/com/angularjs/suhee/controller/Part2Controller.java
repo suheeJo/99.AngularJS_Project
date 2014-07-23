@@ -181,4 +181,92 @@ public class Part2Controller {
 		
 		return "part2/example2_12";
 	}
+	
+
+	/**
+	 * <pre>
+	 * p94 ::: <예제2.13> 텍스트 타입의 <input> 태그 예제 코드
+	 *  
+	 * history
+	 * 2014. 7. 23. by 조수희
+	 * 초기 개발
+	 * </pre>
+	 *
+	 * @since 2014. 7. 23.오후 4:05:54
+	 * @return
+	 */
+	@RequestMapping(value="/example213", method=RequestMethod.GET)
+	public String getExample213View() {
+		logger.debug("======================================================");
+		logger.debug("================== getExample213View =================");
+		logger.debug("======================================================");
+		
+		return "part2/example2_13";
+	}
+	
+
+	/**
+	 * <pre>
+	 * p99 ::: <예제2.14> 체크박스 타입의 <input> 요소 예제 코드
+	 *  
+	 * history
+	 * 2014. 7. 23. by 조수희
+	 * 초기 개발
+	 * </pre>
+	 *
+	 * @since 2014. 7. 23.오후 5:19:20
+	 * @return
+	 */
+	@RequestMapping(value="/example214", method=RequestMethod.GET)
+	public String getExample214View() {
+		logger.debug("======================================================");
+		logger.debug("================== getExample214View =================");
+		logger.debug("======================================================");
+		
+		return "part2/example2_14";
+	}
+	
+
+	/**
+	 * <pre>
+	 * p101 ::: <select> 요소 사용 예제
+	 *  
+	 * history
+	 * 2014. 7. 23. by 조수희
+	 * 초기 개발
+	 * </pre>
+	 *
+	 * @since 2014. 7. 23.오후 5:49:34
+	 * @return
+	 */
+	@RequestMapping(value="/example215", method=RequestMethod.GET)
+	public String getExample215View() {
+		logger.debug("======================================================");
+		logger.debug("================== getExample215View =================");
+		logger.debug("======================================================");
+		
+		return "part2/example2_15";
+	}
+	
+
+	/**
+	 * <pre>
+	 * p103 ::: <예제2.16> CSS 클래스를 이용한 유효성 검증 결과 예제 코드
+	 *  
+	 * history
+	 * 2014. 7. 23. by 조수희
+	 * 초기 개발
+	 * </pre>
+	 *
+	 * @since 2014. 7. 23.오후 6:11:19
+	 * @return
+	 */
+	@RequestMapping(value="/example216", method=RequestMethod.GET)
+	public String getExample216View() {
+		logger.debug("======================================================");
+		logger.debug("================== getExample216View =================");
+		logger.debug("======================================================");
+		
+		return "part2/example2_16";
+	}
 }
