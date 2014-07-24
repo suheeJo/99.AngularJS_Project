@@ -269,4 +269,70 @@ public class Part2Controller {
 		
 		return "part2/example2_16";
 	}
+	
+
+	/**
+	 * <pre>
+	 * p106 ::: <예제2.17> 이벤트 지시자 사용 예제
+	 *  
+	 * history
+	 * 2014. 7. 24. by 조수희
+	 * 초기 개발
+	 * </pre>
+	 *
+	 * @since 2014. 7. 24.오후 4:23:00
+	 * @return
+	 */
+	@RequestMapping(value="/example217", method=RequestMethod.GET)
+	public String getExample217View() {
+		logger.debug("======================================================");
+		logger.debug("================== getExample217View =================");
+		logger.debug("======================================================");
+		
+		return "part2/example2_17";
+	}
+	
+
+	/**
+	 * <pre>
+	 * p109 ::: <예제2.18> ng-class 사용 예제
+	 *  
+	 * history
+	 * 2014. 7. 24. by 조수희
+	 * 초기 개발
+	 * </pre>
+	 *
+	 * @since 2014. 7. 24.오후 4:52:01
+	 * @return
+	 */
+	@RequestMapping(value="/example218", method=RequestMethod.GET)
+	public String getExample218View() {
+		logger.debug("======================================================");
+		logger.debug("================== getExample218View =================");
+		logger.debug("======================================================");
+		
+		return "part2/example2_18";
+	}
+	
+
+	/**
+	 * <pre>
+	 * p111 ::: <예제2.19> ng-style 사용 예제
+	 *  
+	 * history
+	 * 2014. 7. 24. by 조수희
+	 * 초기 개발
+	 * </pre>
+	 *
+	 * @since 2014. 7. 24.오후 5:14:37
+	 * @return
+	 */
+	@RequestMapping(value="/example219", method=RequestMethod.GET)
+	public String getExample219View() {
+		logger.debug("======================================================");
+		logger.debug("================== getExample219View =================");
+		logger.debug("======================================================");
+		
+		return "part2/example2_19";
+	}
 }
