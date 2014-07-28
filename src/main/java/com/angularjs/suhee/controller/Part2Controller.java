@@ -13,6 +13,7 @@ public class Part2Controller {
 	
 	/**
 	 * <pre>
+	 * 테스트으으으
 	 * p67 ::: <예제 2.4> AngularJS의 템플릿 예제 코드
 	 *  
 	 * history
